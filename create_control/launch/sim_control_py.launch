@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<launch>
+
+    <rosparam command="load" file="$(find maze)/config/maze_config.yaml" />
+    <node pkg="maze" name="generator_maze" type="generator_maze" output="screen" />
+    <rosparam command="load" file="$(find maze)/config/maze_start_goal.yaml" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+    <!--    <node pkg="create_control" name="simple_control" type="simple_control"/>-->
+    <node pkg="create_control" name="simple_control_py" type="simple_control_py.py" output="screen" />
+    <node pkg="create_control" name="sensors" type="sensors" output="screen"/>
+
+    <param name="robot_description" textfile="$(find create)/model-1_4.urdf"/>
+    <include file="$(find maze)/launch/robot_start.launch"/>
+    <node pkg="gazebo_ros" name="spawn_model1" type="spawn_model" args="-file $(find maze)/model.sdf -sdf -model maze"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find create_control)/rviz/rviz.rviz" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" >
+        <param name="rate" value="400"/>
+        <param name="publish_frequency" value="400"/>
+    </node>
+
+    <node pkg="rqt_gui" name="rqt_gui" type="rqt_gui"/>
+
+</launch>
