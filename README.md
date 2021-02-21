@@ -45,3 +45,5 @@ control.launch also runs Rviz to visualize the robot and rqt displaying pictures
 Further you are required to pull related packages:
 <br>Smadas/irobot_create_ros - urdf, sdf robot description
 <br>Smadas/maze_generator_ros - maze generator generating urdf and sdf maze model and lauchfile spawning the robot in starting position
+
+Just make sure that your workspace is called catknin_ws otherwise change it in the code.
