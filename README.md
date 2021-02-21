@@ -47,3 +47,5 @@ Further you are required to pull related packages:
 <br>Smadas/maze_generator_ros - maze generator generating urdf and sdf maze model and lauchfile spawning the robot in starting position
 
 Just make sure that your workspace is called catknin_ws otherwise change it in the code.
+
+Oh, sorry for the mishap about the different naming of repo and actual ROS package. Someone is going to damn me real bad.
