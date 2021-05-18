@@ -48,4 +48,4 @@ Further you are required to pull related packages:
 
 Just make sure that your workspace is called catknin_ws otherwise change it in the code.
 
-Oh, sorry for the mishap about the different naming of repo and actual ROS package. Someone is going to damn me real bad.
+Please be aware of the different naming of repo and actual ROS package.
